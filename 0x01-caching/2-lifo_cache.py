@@ -11,8 +11,8 @@ class LIFOCache(BaseCaching):
         self.keys = []
 
     def put(self, key, item):
-        """	inserts the data to the dict while 
-        	discarding the recently inserted
+        """	inserts the data to the dict while
+                discarding the recently inserted
         """
         if key is not None and item is not None:
             self.cache_data[key] = item
