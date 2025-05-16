@@ -20,7 +20,6 @@ class MRUCache(BaseCaching):
             MRUCache.counter += 1
 
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-            # find second last value
             values = sorted(list(self.keys.values()), reverse=True)
             mru_value = values[1]
 
