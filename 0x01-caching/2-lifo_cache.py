@@ -8,16 +8,17 @@ class LIFOCache(BaseCaching):
 
     def __init__(self):
         super().__init__()
-        self.ky = []
+        self.keys = []
 
     def put(self, key, item):
-        """inserts the data to the dict while discarding the recently inserted"""
+        """	inserts the data to the dict while
+                discarding the recently inserted
+        """
         if key is not None and item is not None:
             self.cache_data[key] = item
             self.ky.append(key)
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-            last_key = self.ky[len(self.ky) - 2]
-            # last_key = keys[len(keys) - 2]
+            last_key = self.keys[len(self.keys) - 2]
             print("DISCARD: {}".format(last_key))
             del self.cache_data[last_key]
 
