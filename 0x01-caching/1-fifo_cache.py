@@ -20,3 +20,10 @@ class FIFOCache(BaseCaching):
             print(f"DISCARD: {keys[0]}")
             first_key = keys[0]
             del self.cache_data[first_key]
+
+    def get(self, key):
+        """gets the item of the key"""
+        if key is None or key not in self.cache_data:
+            return None
+        else:
+            return self.cache_data[key]
