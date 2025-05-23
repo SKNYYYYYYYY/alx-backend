@@ -16,9 +16,12 @@ conf = Config()
 app.config.from_object(conf)
 babel = Babel(app)
 
+
 @app.route("/")
 def index():
-	return render_template("1-index.html")
+    """renders html file"""
+    return render_template("1-index.html")
+
 
 if __name__ == "__main__":
     app.run()
