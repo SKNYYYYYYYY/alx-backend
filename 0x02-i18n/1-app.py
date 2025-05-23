@@ -5,6 +5,7 @@ from flask import Flask, render_template
 
 
 class Config:
+    """default configurations"""
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
@@ -15,7 +16,9 @@ conf = Config()
 app.config.from_object(conf)
 babel = Babel(app)
 
-# render_template("1-index.html")
+@app.route("/")
+def index():
+	return render_template("1-index.html")
 
 if __name__ == "__main__":
     app.run()
