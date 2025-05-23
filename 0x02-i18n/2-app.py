@@ -10,13 +10,13 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale():
-    """return locale"""
+    """return the best language"""
     return request.accept_languages.best_match(["en", "fr"])
 
 
 @app.route("/")
 def index():
-    """renders html file"""
+    """renders 2-index html file"""
     return render_template("2-index.html")
 
 
