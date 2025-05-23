@@ -10,7 +10,7 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale():
-    """return locale"""
+    """Select the best matching language from the request headers."""
     params = request.args
     locale = params['locale']
     if locale in ["en", "fr"]:
