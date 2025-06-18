@@ -1,0 +1,8 @@
+[{
+  "watch": ["[0-9]*.js"],
+  "ext": "js,json",
+  "ignore": ["node_modules", "logs", ".git"],
+  "exec": "node app.js",
+  "delay": "200"
+}
+]
